@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<!-- 템플릿을 정의(main화면 레이아웃) -->
+	<definition name="monitoringTemplate" template="/WEB-INF/layout/monitoringLayer.jsp">
+		<put-attribute name="status" value="/WEB-INF/monitoring/monitor.jsp" />
+		<put-attribute name="map" value="/WEB-INF/monitoring/map.jsp" />
+		<put-attribute name="controller" value="/WEB-INF/monitoring/controller.jsp" />
+	</definition>
+
+<!-- 	<definition name="adminTemplate" template="/WEB-INF/layout/adminlayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/include/top.jsp"></put-attribute>
+		<put-attribute name="adminleft" value="/WEB-INF/include/adminleft.jsp"></put-attribute>
+		<put-attribute name="admincontent" value="/WEB-INF/include/admincontent.jsp"></put-attribute>
+	</definition>
+ -->
+	<!-- 메뉴를 선택할때 마다 보여지는 페이즈는 위에서 템플릿에 등록한 페이지가 아닌 다른 페이지가 다양하게 보여져야 하므로 각각 
+		보여질 페이지에 연결될 파일을 설정파일에 등록한다. -->
+	<!-- 위에서 등록한 템플릿 중 사용하고 싶은 구조를 하나 선택해서 정의된 이름을 명시 -->
+	<definition name="deliverydrone/monitor" extends="monitoringTemplate">
+	</definition>
+
+<!-- 	<definition name="board/write" extends="mainTemplate"> board/wirte로 요청이 들어왔을때
+
+		<put-attribute name="content" value="/WEB-INF/board/write.jsp" />
+
+	</definition>
+		<definition name="admin/index" extends="adminTemplate">index로 요청이 들어왔을때
+	</definition>
+
+	<definition name="product/list" extends="mainTemplate"> board/wirte로 요청이 들어왔을때
+		<put-attribute name="content" value="/WEB-INF/product/prdlist.jsp" />
+	</definition>
+
+	<definition name="product/read" extends="mainTemplate"> board/wirte로 요청이 들어왔을때
+		<put-attribute name="content" value="/WEB-INF/product/product_read.jsp" />
+	</definition>
+
+	<definition name="comment/result" extends="adminTemplate">
+		<put-attribute name="admincontent" value="/WEB-INF/admin/commentResult.jsp" />
+	</definition>
+ -->
+</tiles-definitions>

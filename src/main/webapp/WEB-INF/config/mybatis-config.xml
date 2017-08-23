@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.member.dto.MemberDTO" alias="member"/>
+		<typeAlias type="kr.product.dto.ProductDTO" alias="product"/>	
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/member.xml"/>
+		<mapper resource="mapper/product.xml"/>
+	</mappers>
+	<!-- <typeAliases>
+		<typeAlias type="emp.dto.EmpDTO" alias="emp"/>	
+		<typeAlias type="dept.dto.DeptDTO" alias="dept"/>	
+		<typeAlias type="kr.re.kitri.insa.board.BoardDTO" alias="board"/>			
+	</typeAliases> -->
+	<!-- <mappers>
+		<mapper resource="mapper/emp.xml"/>
+		<mapper resource="mapper/dept.xml"/>
+		<mapper resource="mapper/board.xml"/>
+	</mappers> -->
+</configuration>

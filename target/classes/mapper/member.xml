@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="kr.deliverydrone.member">
+	<select id="login" resultType="member">
+		select * from member where #{user_id} = user_id and #{user_pass} = user_pass
+	</select>
+
+	<insert id="signup" parameterType="member">
+		insert into member values(#{user_id}, #{user_pass}, #{user_email})
+	</insert>
+	
+	<delete id="signout" parameterType="member">
+		delete from member where user_id = #{user_id}
+	</delete>
+	
+<!-- 	<select id="list"  resultType="board">
+		select * from board
+	</select>
+	<select id="search" parameterType="String" resultType="board">
+		select * from board where title like #{title}
+	</select>
+	
+	<select id="dynamicsearch" resultType="board" parameterType="Map">
+		select * from board 
+		<where>
+				<if test="tag=='title' and search != ''">
+						title like '%' ||#{search}|| '%' 
+				</if>
+				<if test="tag=='writer' and search != ''">
+						id like '%'||#{search}||'%'
+				</if>
+				<if test="tag=='content' and search != ''">
+						text like '%'||#{search}||'%'
+				</if>
+		</where>
+	</select>
+
+	<select id="search2" resultType="board">
+		select * from board where board_no
+	</select>	 -->
+  </mapper>
